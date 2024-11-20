@@ -74,20 +74,6 @@ st.table(df)
 st.header("Metric...!!!")
 st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
 
-st.header("json...!!!")
-st.json(
-    {
-        "foo": "bar",
-        "stuff": [
-            "stuff 1",
-            "stuff 2",
-            "stuff 3",
-        ],
-        "level1": {"level2": {"level3": {"a": "b"}}},
-    },
-    expanded=2,
-)
-
 st.header("area chart...!!!")
 chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
 
@@ -119,21 +105,6 @@ chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
 st.scatter_chart(chart_data)
 
 
-st.header("altair_chart...!!!")
-import altair as alt
-chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
-
-c = (
-   alt.Chart(chart_data)
-   .mark_circle()
-   .encode(x="a", y="b", size="c", color="c", tooltip=["a", "b", "c"])
-)
-
-st.altair_chart(c, use_container_width=True)
 
 st.header("sunrise...!!!")
-st.logo(
-    LOGO_URL_LARGE,
-    link="https://streamlit.io/gallery",
-    icon_image=LOGO_URL_SMALL,
-)
+st.image("./sunrise.jpg", caption="Sunrise by the mountains")
